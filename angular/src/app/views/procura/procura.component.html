@@ -1,0 +1,275 @@
+<div class="total">
+    <div class="cabecalho">
+        <div class="logo">
+            <h3 class="title">SOS</h3><i class="material-icons">pets</i>
+            <h3 class="title">PET</h3>
+        </div>
+        <div class="link" style="margin-left: 8%;">
+            <button (click)="navegarHome()" class="linkPaginas">Inicio</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaProcura()" class="linkPaginas"> Publicar Pet</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaMapa()" class="linkPaginas"> Encontrar Pet </button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaHistorias()" class="linkPaginas"> Histórias Felizes</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaSobre()" class="linkPaginas"> Sobre nós</button>
+        </div>
+        <!-- <div class="link">
+            <button mat-raised-button class="linkPaginas" style="color: #fff;background: black;">Entrar</button>
+        </div> -->
+
+    </div>
+    <div class="corpo">
+
+        <div class="card" >
+            <mat-card class="example-card" *ngFor="let pet of pets" >
+                <mat-card-header *ngIf="pet.encontrado ==0">
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{ pet.nome_usuario }}</mat-card-title>
+                    <mat-card-subtitle>{{ pet.raca }}</mat-card-subtitle>
+                </mat-card-header>
+                <img *ngIf="pet.encontrado ==0" mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/{{pet.filename}}" alt="Photo of a Shiba Inu">
+                <mat-card-content style="margin-top: 2%;" *ngIf="pet.encontrado ==0">
+                    <p>
+                        <b>Nome:</b> {{ pet.nome_pet }} 🐾<br>
+                       
+                        <b>Visto por último em:</b> {{ pet.visto_ultimo }}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions *ngIf="pet.encontrado ==0">
+                    <button mat-button
+                        style="width: 90%; background: black; color: white; margin-left: 5%;" (click)="openDialog()">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <!--     <div class="rodape">
+
+    </div> -->
+</div>
+
+
+<!--
+    <div class="card">
+            <div class="pets">
+                <img src="http://localhost:80/projeto_integrador2/PHP/img/pet{{cont}}.jpg" alt="">
+            </div>
+
+            <div class="flag">
+                <button mat-raised-button style="background: {{cor}};">{{statusPet1}}</button>
+            </div>
+            <div class="info">
+                <mat-card class="example-card">
+                    <mat-card-header *ngIf="cont==1">
+                        <mat-card-title class="post">Bob</mat-card-title>
+                        <mat-card-subtitle class="post">Border colie</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==2">
+                        <mat-card-title class="post">Francisco</mat-card-title>
+                        <mat-card-subtitle class="post">Border colie</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==3">
+                        <mat-card-title class="post">Bruto</mat-card-title>
+                        <mat-card-subtitle class="post">Pinscher</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==4">
+                        <mat-card-title class="post">Garoto</mat-card-title>
+                        <mat-card-subtitle class="post">Border colie</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==5">
+                        <mat-card-title class="post">Thor</mat-card-title>
+                        <mat-card-subtitle class="post">Pitbull</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==6">
+                        <mat-card-title class="post">Pardal</mat-card-title>
+                        <mat-card-subtitle class="post">Siames</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==7">
+                        <mat-card-title class="post">Ana Clara</mat-card-title>
+                        <mat-card-subtitle class="post">Calopsita</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-header *ngIf="cont==8">
+                        <mat-card-title class="post">Bianca</mat-card-title>
+                        <mat-card-subtitle class="post">Capivara</mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content class="post" *ngIf="cont==1">
+                        <p>
+                            🐾 Ajude-nos a encontrar Bob, nosso Border Collie marrom perdido! 🐾<br>
+
+                            Precisamos de sua ajuda para encontrar Bob, nosso adorado Border Collie marrom. Ele
+                            desapareceu em XYZ e é parte essencial de nossa família. Bob tem cerca de três anos, pelagem
+                            marrom e olhos expressivos. Por favor, entre em contato se tiver qualquer informação.
+                            Gratificamos qualquer ajuda. Compartilhe esta mensagem. #EncontreBob
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==2">
+                        <p>
+                            🐾 Ajude-nos a encontrar Francisco, nosso Border Collie marrom desaparecido! 🐾<br>
+
+                            Precisamos de sua ajuda para localizar Francisco, nosso amável Border Collie marrom. Ele
+                            sumiu recentemente e é parte essencial de nossa família. Francisco tem uma pelagem marrom
+                            deslumbrante e é muito carinhoso. Se você tiver qualquer informação, por favor, entre em
+                            contato conosco imediatamente. Oferecemos uma recompensa pela sua segura devolução.
+                            Compartilhe esta mensagem e nos ajude a trazer Francisco de volta para casa!
+                            #EncontreFrancisco
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==3">
+                        <p>
+
+                            🐾 Ajude-nos a encontrar Bruto, nosso Pinscher preto desaparecido! 🐾<br>
+
+                            Pedimos sua colaboração para encontrar Bruto, nosso querido Pinscher de pelagem preta. Ele
+                            sumiu e estamos desesperados para tê-lo de volta. Bruto é pequeno e tem uma personalidade
+                            adorável. Se você o avistar ou tiver qualquer informação, por favor, entre em contato
+                            conosco imediatamente. Oferecemos uma recompensa generosa pela sua localização segura.
+                            Compartilhe esta mensagem e nos ajude a trazer Bruto de volta para casa! #EncontreBruto
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==4">
+                        <p>
+                            🐾 Ajude-nos a encontrar Garoto, nosso Border Collie marrom desaparecido! 🐾<br>
+
+                            Precisamos de sua ajuda para localizar Garoto, nosso amado Border Collie de pelagem marrom.
+                            Ele desapareceu e é parte fundamental de nossa família. Garoto tem um olhar doce e uma
+                            pelagem exuberante. Se tiver qualquer informação, por favor, entre em contato conosco
+                            imediatamente. Oferecemos uma recompensa pela sua segura volta para casa. Compartilhe esta
+                            mensagem e nos ajude a encontrar Garoto! #EncontreGaroto
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==5">
+                        <p>
+                            🐾 Ajude-nos a encontrar Thor, nosso Pitbull marrom desaparecido! 🐾<br>
+
+                            Thor, nosso leal Pitbull de pelagem marrom, sumiu e estamos desesperados para tê-lo de
+                            volta. Ele é forte, poderoso e um membro amado da nossa família. Se você tiver qualquer
+                            informação sobre seu paradeiro, por favor, entre em contato imediatamente. Oferecemos uma
+                            generosa recompensa pela sua segura devolução. Compartilhe esta mensagem para aumentar
+                            nossas chances de encontrar Thor! #EncontreThor
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==6">
+                        <p>
+                            🐾 Ajude-nos a encontrar Pardal, nosso gato Siamês perdido! 🐾<br>
+
+                            Estamos desesperados em busca de Pardal, nosso adorável gato Siames. Ele desapareceu e é
+                            parte essencial de nossa família. Pardal tem olhos azuis cativantes e uma pelagem
+                            característica. Se você o avistar ou tiver qualquer informação, por favor, entre em contato
+                            conosco imediatamente. Estamos oferecendo uma recompensa pela sua segura volta para casa.
+                            Compartilhe esta mensagem e nos ajude a encontrar Pardal! #EncontrePardal
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==7">
+                        <p>
+                            🕊️ Ajude-nos a encontrar Ana Clara, nossa Calopsita branca desaparecida! 🕊️<br>
+
+                            Estamos desesperados para encontrar Ana Clara, nossa adorável Calopsita de plumagem branca.
+                            Ela voou para longe e é uma parte especial de nossas vidas. Se você a avistar ou tiver
+                            qualquer informação, por favor, entre em contato conosco imediatamente. Oferecemos uma
+                            recompensa pela sua segura volta para casa. Compartilhe esta mensagem e nos ajude a trazer
+                            Ana Clara de volta! #EncontreAnaClara
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content class="post" *ngIf="cont==8">
+                        <p>
+
+                            🐢 Ajude-nos a encontrar Bianca, nossa Capivara desaparecida! 🐢<br>
+
+                            Estamos procurando desesperadamente por Bianca, nossa querida Capivara. Ela sumiu e é uma
+                            parte especial de nosso ambiente. Bianca é uma capivara amigável e de porte médio. Se você
+                            tiver qualquer informação sobre seu paradeiro, por favor, entre em contato imediatamente.
+                            Oferecemos uma recompensa pela sua segura devolução. Compartilhe esta mensagem e nos ajude a
+                            encontrar Bianca! #EncontreBianca
+                        </p>
+                    </mat-card-content>
+
+                </mat-card>
+            </div>
+            <div class="buttons">
+                <button mat-raised-button (click)="anteriorPet()">Anterior</button>
+                <button mat-raised-button (click)="proximoPet()">Próximo</button>
+            </div> -->
+<!--  <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Karina</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet1.jpg"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Bob 🐾<br>
+                        <b>Idade:</b> 1 ano.<br>
+                        <b>Visto por ultimo em:</b> R. Dr. Barbosa da Cunha, 162 - Jardim Guanabara
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card2">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image2"></div>
+                    <mat-card-title>Karina</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet2.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Francisco🐾<br>
+                        <b>Idade:</b> 3 anos.<br>
+                        <b>Visto por ultimo em:</b> R. Elisiário Prado - Jardim Chapadão
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card3">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image3"></div>
+                    <mat-card-title>Guilherme</mat-card-title>
+                    <mat-card-subtitle>Pinscher</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet3.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Bruto 🐾<br>
+                        <b>Idade:</b> 2 anos.<br>
+                        <b>Visto por ultimo em:</b> R. Salvador Penteado - Botafogo
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card4">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image4"></div>
+                    <mat-card-title>Vinicius</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet4.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome: </b> Garoto 🐾<br>
+                        <b>Idade:</b> 5 anos.<br>
+                        <b>Visto por ultimo em:</b> Dr. Rafael Sáles, 625-535 - Bonfim
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            
+        </div>
+-->

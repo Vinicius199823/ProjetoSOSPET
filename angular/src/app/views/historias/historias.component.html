@@ -1,0 +1,239 @@
+<div class="total">
+    <div class="cabecalho">
+        <div class="logo">
+            <h3 class="title">SOS</h3><i class="material-icons">pets</i>
+            <h3 class="title">PET</h3>
+        </div>
+        <div class="link" style="margin-left: 8%;">
+            <button (click)="navegarHome()" class="linkPaginas">Inicio</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaProcura()" class="linkPaginas"> Publicar Pet</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaMapa()" class="linkPaginas"> Encontrar Pet </button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaHistorias()" class="linkPaginas"> Histórias Felizes</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaSobre()" class="linkPaginas"> Sobre nós</button>
+        </div>
+        <!-- <div class="link">
+            <button mat-raised-button class="linkPaginas" style="color: #fff;background: black;"
+                (click)="navegarLogin()">Entrar</button>
+        </div> -->
+
+    </div>
+    <!--   <div class="slider">
+        <img src="http://localhost:80/projeto_integrador2/PHP/img/pet{{num}}.jpg" style="margin-left: 27%;margin-top: 1%;width: 45%; height: 80%;">
+    </div> -->
+    <div class="corpo">
+        <table   class="mat-elevation-z8" style="width: 90%; margin-left: 5%;">
+
+            <tr>
+                <td> <mat-card class="example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Karina</mat-card-title>
+                            <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet7.jpg"
+                            alt="Photo of a Shiba Inu">
+                        <mat-card-content style="margin-top: 2%;">
+                            <p>
+                                <b>Nome:</b> Bob 🐾<br>
+                                <b>Idade:</b> 1 ano.<br>
+                                <b>Visto por ultimo em:</b> R. Dr. Barbosa da Cunha, 162 - Jardim Guanabara
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+
+                            <button mat-button
+                                style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </td>
+                <td>
+                    <mat-card class="example-card2">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image2"></div>
+                            <mat-card-title>Karina</mat-card-title>
+                            <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet5.jpg" alt="">
+                        <mat-card-content style="margin-top: 2%;">
+                            <p>
+                                <b>Nome:</b> Francisco🐾<br>
+                                <b>Idade:</b> 3 anos.<br>
+                                <b>Visto por ultimo em:</b> R. Elisiário Prado - Jardim Chapadão
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button
+                            style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </td>
+                <td> <mat-card class="example-card3">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image3"></div>
+                            <mat-card-title>Guilherme</mat-card-title>
+                            <mat-card-subtitle>Pinscher</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet4.jpg" alt="">
+                        <mat-card-content style="margin-top: 2%;">
+                            <p>
+                                <b>Nome:</b> Bruto 🐾<br>
+                                <b>Idade:</b> 2 anos.<br>
+                                <b>Visto por ultimo em:</b> R. Salvador Penteado - Botafogo
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button
+                            style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </td>
+            </tr>
+            <tr>
+                <td><mat-card class="example-card4">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image4"></div>
+                        <mat-card-title>Vinicius</mat-card-title>
+                        <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet8.jpg" alt="">
+                    <mat-card-content style="margin-top: 2%;">
+                        <p>
+                            <b>Nome: </b> Garoto 🐾<br>
+                            <b>Idade:</b> 5 anos.<br>
+                            <b>Visto por ultimo em:</b> Dr. Rafael Sáles, 625-535 - Bonfim
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button  style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                    </mat-card-actions>
+                </mat-card></td>
+                <td><mat-card class="example-card4">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image4"></div>
+                        <mat-card-title>Vinicius</mat-card-title>
+                        <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet5.jpg" alt="">
+                    <mat-card-content style="margin-top: 2%;">
+                        <p>
+                            <b>Nome: </b> Garoto 🐾<br>
+                            <b>Idade:</b> 5 anos.<br>
+                            <b>Visto por ultimo em:</b> Dr. Rafael Sáles, 625-535 - Bonfim
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button  style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                    </mat-card-actions>
+                </mat-card></td>
+                <td><mat-card class="example-card4">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image4"></div>
+                        <mat-card-title>Vinicius</mat-card-title>
+                        <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet6.jpg" alt="">
+                    <mat-card-content style="margin-top: 2%;">
+                        <p>
+                            <b>Nome: </b> Garoto 🐾<br>
+                            <b>Idade:</b> 5 anos.<br>
+                            <b>Visto por ultimo em:</b> Dr. Rafael Sáles, 625-535 - Bonfim
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button  style="width: 90%; background: rgb(8, 160, 15); color: white; margin-left: 5%;">ENCONTRADO</button>
+                    </mat-card-actions>
+                </mat-card></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <!--  <div class="rodape">
+
+    </div> -->
+</div>
+
+<!--
+     <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Karina</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet1.jpg"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Bob 🐾<br>
+                        <b>Idade:</b> 1 ano.<br>
+                        <b>Visto por ultimo em:</b> R. Dr. Barbosa da Cunha, 162 - Jardim Guanabara
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card2">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image2"></div>
+                    <mat-card-title>Karina</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet2.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Francisco🐾<br>
+                        <b>Idade:</b> 3 anos.<br>
+                        <b>Visto por ultimo em:</b> R. Elisiário Prado - Jardim Chapadão
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card3">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image3"></div>
+                    <mat-card-title>Guilherme</mat-card-title>
+                    <mat-card-subtitle>Pinscher</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet3.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Bruto 🐾<br>
+                        <b>Idade:</b> 2 anos.<br>
+                        <b>Visto por ultimo em:</b> R. Salvador Penteado - Botafogo
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card4">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image4"></div>
+                    <mat-card-title>Vinicius</mat-card-title>
+                    <mat-card-subtitle>Border Collie</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/pet4.jpg" alt="">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome: </b> Garoto 🐾<br>
+                        <b>Idade:</b> 5 anos.<br>
+                        <b>Visto por ultimo em:</b> Dr. Rafael Sáles, 625-535 - Bonfim
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;">Encontrei</button>
+                </mat-card-actions>
+            </mat-card>
+-->

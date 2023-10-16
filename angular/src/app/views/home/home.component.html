@@ -1,0 +1,95 @@
+<div class="total">
+    <div class="cabecalho">
+        <div class="logo">
+            <h3 class="title">SOS</h3><i class="material-icons">pets</i>
+            <h3 class="title">PET</h3>
+        </div>
+        <div class="link" style="margin-left: 8%;">
+            <button (click)="navegarHome()" class="linkPaginas">Inicio</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaProcura()" class="linkPaginas"> Publicar Pet</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaMapa()" class="linkPaginas"> Encontrar Pet </button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaHistorias()" class="linkPaginas"> Histórias Felizes</button>
+        </div>
+        <div class="link">
+            <button (click)="navegarParaSobre()" class="linkPaginas"> Sobre nós</button>
+        </div>
+        <!-- <div class="link">
+            <button mat-raised-button class="linkPaginas" style="color: #fff;background: black;"
+                (click)="navegarLogin()">Entrar</button>
+        </div> -->
+
+    </div>
+    <!--   <div class="slider">
+        <img src="http://localhost:80/projeto_integrador2/PHP/img/pet{{num}}.jpg" style="margin-left: 27%;margin-top: 1%;width: 45%; height: 80%;">
+    </div> -->
+    <div class="corpo">
+        <div class="dog1" *ngIf="cadastrarPet">
+            <img src="http://localhost:80/projeto_integrador2/PHP/img/dog1.png" class="img1" alt="">
+
+        </div>
+        <div class="convite" *ngIf="cadastrarPet">
+            <h1 class="titleConvite">Cadastre Seu Pet</h1>
+            <h1 class="chamativo">Aqui!</h1>
+            <i class="material-icons"
+                style="float:right;margin-right: 61.4%;margin-top:10%;font-size: 3rem;">arrow_downward</i>
+
+            <button mat-raised-button (click)="openDialog()" class="linkPaginas"
+                style="float:left; margin-left: 2%;margin-top: 5%;width: 400px;  color: #fff;background-color: rgb(7, 7, 7);">cadastrar</button>
+
+        </div>
+        <div class="dog2" *ngIf="cadastrarPet">
+            <img src="http://localhost:80/projeto_integrador2/PHP/img/patinhas.png" class="img2" alt="">
+        </div>
+        <div class="Perfil" *ngIf="!cadastrarPet">
+            <div class="foto-usuario">
+                <img src="http://localhost:80/projeto_integrador2/PHP/img/Mobile login-cuate.png">
+                <button mat-button style="float: left; background: black; color:#fff; margin-left: 5%;margin-top: 5%;"> Alterar perfil </button>
+            </div>
+            <!-- <div class="infoPerfil">
+
+            </div> -->
+           <!--  <mat-card class="example-card">
+
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/{{imgPet}}"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content style="margin-top: 2%;">
+                    <p>
+                        <b>Nome:</b> Bob 🐾<br>
+                        <b>Idade:</b> 1 ano.<br>
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+
+                    <button mat-button
+                        style="width: 90%; background: black; color: white; margin-left: 5%;">Publicar</button>
+                </mat-card-actions>
+            </mat-card> -->
+            <mat-card *ngFor="let pet of listaPet" class="example-card">
+                <img mat-card-image src="http://localhost:80/projeto_integrador2/PHP/img/{{ pet.filename }}">
+                <mat-card-content style="margin-top: 2%;">
+                  <p>
+                    <b>Nome:</b> {{ pet.nome_pet }} 🐾<br>
+                    <b>Raça:</b> {{ pet.raca }}.<br>
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button style="width: 90%; background: black; color: white; margin-left: 5%;" (click)="openDialog2(pet.id_pet)">Publicar</button>
+                </mat-card-actions>
+              </mat-card>
+            <div class="adicionar">
+                <button mat-button (click)="openDialog()"
+                style="width: 90%; background: black; color: white; margin-left: 5%; border-radius: 25%;">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!--  <div class="rodape">
+
+    </div> -->
+</div>

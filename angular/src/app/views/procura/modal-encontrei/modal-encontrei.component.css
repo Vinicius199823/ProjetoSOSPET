@@ -1,0 +1,51 @@
+.total{
+    width: 800px;
+    height: 600px;
+    background: black;
+}
+
+.total>.Metade1{
+    width: 60%;
+    height: 100%;
+    float: left;
+    background: #ff9249;
+}
+.boxLogim{
+    float: left;
+    width: 90%;
+    height: 100%;
+    margin-top: 20%;
+  
+    
+    background: #ff924900;
+    border-radius: 15px;
+}
+.boxLogim>form{
+    float:left;
+    width: 90%;
+    height: 100%;
+    margin-top: 2%;
+    margin-left: 12.5%;
+    margin-right: 2%;
+}
+.total>.Metade2{
+    float: left;
+    width: 40%;
+    height: 100%;
+
+
+}
+.Metade2>img{
+    width: 85%;
+    height: 50%;
+
+    margin-top: 35%;
+    margin-left: 10%;
+}
+mat-form-field{
+    margin-left: -2%;
+}
+mat-form-field{
+    width: 100%;
+    margin-right: 2%;
+}
